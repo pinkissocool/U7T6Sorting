@@ -3,8 +3,9 @@ import java.util.ArrayList;
 public class Sort
 {
   // Part A.  Which Sort is Which?
-  public static void firstSortingAlgorithm(int[] elements)
+  public static void selectionSort(int[] elements)
   {
+    int count = 0;
     for (int j = 0; j < elements.length - 1; j++)
     {
       int minIndex = j;
@@ -14,16 +15,20 @@ public class Sort
         {
           minIndex = k;
         }
+        count++;
       }
       int temp = elements[j];
       elements[j] = elements[minIndex];
       elements[minIndex] = temp;
+
     }
+    System.out.println("Sort: " + count);
   }
 
   // Part A.  Which Sort is Which?
-  public static void secondSortingAlgorithm(int[] elements)
-  { 
+  public static void insertionSort(int[] elements)
+  {
+    int count = 0;
     for (int j = 1; j < elements.length; j++)
     {
       int temp = elements[j];
@@ -32,9 +37,12 @@ public class Sort
       {     
         elements[possibleIndex] = elements[possibleIndex - 1];
         possibleIndex--;
+        count++;
       }
       elements[possibleIndex] = temp;
+
     }
+    System.out.println("Insert: " + count);
   }
   
   // Part C.  Sorting a 1000-word list!
